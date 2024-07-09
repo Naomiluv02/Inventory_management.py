@@ -179,7 +179,7 @@ def import_inventory():
         messagebox.showerror("Error", f"Failed to import inventory: {e}")
 
 
-low_stock_threshold = 5  # You can set this dynamically if needed
+low_stock_threshold = 5  # This can set dynamically if needed
 
 
 def check_low_stock():
@@ -222,42 +222,27 @@ def main():
     root = tk.Tk()
     root.title("Inventory Management System")
 
-    # Create a LabelFrame for user inputs
-    userinfoframe = tk.LabelFrame(root, text="Inventory Management")
+    # Create a LabelFrame for user inputs with background color
+    userinfoframe = tk.LabelFrame(root, text="Inventory Management", bg="#e6e6ff", fg="#4b0082")
     userinfoframe.grid(row=0, column=0, padx=10, pady=5, sticky='w')
 
     # Add category dropdown
-    tk.Label(userinfoframe, text="Select Category").grid(row=0, column=0, padx=5, pady=5)
+    tk.Label(userinfoframe, text="Select Category", bg="#e6e6ff", fg="#4b0082").grid(row=0, column=0, padx=8, pady=8)
     category_var = tk.StringVar()
     category_menu = ttk.Combobox(userinfoframe, textvariable=category_var)
     category_menu['values'] = categories
     category_menu.grid(row=0, column=1, padx=5, pady=5)
 
     # Add buttons inside the LabelFrame
-    tk.Button(userinfoframe, text="Add Item", command=add_item, width=20, height=2).grid(row=1, column=0, padx=5,
-                                                                                         pady=5)
-    tk.Button(userinfoframe, text="Update Quantity", command=update_quantity, width=20, height=2).grid(row=2, column=0,
-                                                                                                       padx=5, pady=5)
-    tk.Button(userinfoframe, text="Remove Item", command=remove_item, width=20, height=2).grid(row=3, column=0, padx=5,
-                                                                                               pady=5)
-    tk.Button(userinfoframe, text="Display Inventory", command=display_inventory, width=20, height=2).grid(row=4,
-                                                                                                           column=0,
-                                                                                                           padx=5,
-                                                                                                           pady=5)
-    tk.Button(userinfoframe, text="Search Item", command=search_item, width=20, height=2).grid(row=5, column=0, padx=5,
-                                                                                               pady=5)
-    tk.Button(userinfoframe, text="Export Inventory", command=export_inventory, width=20, height=2).grid(row=6,
-                                                                                                         column=0,
-                                                                                                         padx=5, pady=5)
-    tk.Button(userinfoframe, text="Import Inventory", command=import_inventory, width=20, height=2).grid(row=7,
-                                                                                                         column=0,
-                                                                                                         padx=5, pady=5)
-    tk.Button(userinfoframe, text="Check Low Stock", command=check_low_stock, width=20, height=2).grid(row=8, column=0,
-                                                                                                       padx=5, pady=5)
-    tk.Button(userinfoframe, text="Dashboard Overview", command=dashboard_overview, width=20, height=2).grid(row=9,
-                                                                                                             column=0,
-                                                                                                             padx=5,
-                                                                                                             pady=5)
+    tk.Button(userinfoframe, text="Add Item", command=add_item, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=1, column=0, padx=5, pady=5)
+    tk.Button(userinfoframe, text="Update Quantity", command=update_quantity, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=2, column=0, padx=5, pady=5)
+    tk.Button(userinfoframe, text="Remove Item", command=remove_item, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=3, column=0, padx=5, pady=5)
+    tk.Button(userinfoframe, text="Display Inventory", command=display_inventory, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=4, column=0, padx=5, pady=5)
+    tk.Button(userinfoframe, text="Search Item", command=search_item, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=5, column=0, padx=5, pady=5)
+    tk.Button(userinfoframe, text="Export Inventory", command=export_inventory, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=6, column=0, padx=5, pady=5)
+    tk.Button(userinfoframe, text="Import Inventory", command=import_inventory, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=7, column=0, padx=5, pady=5)
+    tk.Button(userinfoframe, text="Check Low Stock", command=check_low_stock, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=8, column=0, padx=5, pady=5)
+    tk.Button(userinfoframe, text="Dashboard Overview", command=dashboard_overview, width=20, height=2, bg="#ccccff", fg="#4b0082").grid(row=9, column=0, padx=5, pady=5)
 
     root.mainloop()
 
