@@ -179,7 +179,7 @@ def import_inventory():
         messagebox.showerror("Error", f"Failed to import inventory: {e}")
 
 
-low_stock_threshold = 5  # This can set dynamically if needed
+low_stock_threshold = 5  # This can be set dynamically if needed
 
 
 def check_low_stock():
